@@ -1,5 +1,5 @@
 """
-Functions to compute the (exact) neighborhood intersection of vertices in a graph.
+Algorithms to compute the (exact) neighborhood intersection of vertices in a graph.
 Includes default, vertex-normalized and edge-normalized versions.
 """
 

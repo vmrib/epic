@@ -1,3 +1,14 @@
+"""
+Generates data for analyzing the performance of normalized intersection algorithms. The data includes statistical measures (mean, standard deviation, max, min) for the average absolute error and runtime for both vertex-normalized and edge-normalized intersection algorithms as a function of the accuracy parameter ε. It performs `n` iterations for each ε value to compute statistical measures.
+
+This data is used in Figures 2, 3 and 4 in the paper.
+
+Example usage:
+python generate_normalized_intersection_data.py ./graphs/deezer_RO_edges.csv --delimiter , --delta 0.1 --n 10
+
+This will generate a CSV file in the `./results` directory containing the results.
+"""
+
 import argparse
 from pathlib import Path
 from alive_progress import alive_bar
@@ -9,12 +20,40 @@ import lib.epic as epic
 
 
 def read_graph(file_path: any, delimiter: str | None = None) -> nx.Graph:
+    """
+    Reads a graph from an edgelist file and converts the node labels to integers.
+
+    Parameters
+    ----------
+    file_path : any
+        The path to the file.
+    delimiter : str, optional
+        The delimiter used in the file, by default None
+
+    Returns
+    -------
+    nx.Graph
+        A NetworkX graph.
+    """
     G_raw = nx.read_edgelist(file_path, delimiter=delimiter, nodetype=int)
     G = nx.convert_node_labels_to_integers(G_raw)
     return G
 
 
 def stopwatch(func):
+    """
+    A wrapper to measure the runtime of a function. The wrapped function returns the result and the runtime.
+
+    Parameters
+    ----------
+    func : function
+        The function to be measured.
+
+    Returns
+    -------
+    function
+        The wrapped function.
+    """
 
     def wrapper(*args, **kwargs):
         start = time.perf_counter()
@@ -27,7 +66,25 @@ def stopwatch(func):
 
 
 def generate_data(G: nx.Graph, δ: float, n: int) -> pd.DataFrame:
+    """
+    Generates data for analyzing the performance of normalized intersection algorithms (vertex and edge normalized).
 
+    The data includes statistical measures (mean, standard deviation, max, min) for the average absolute error and runtime for both vertex-normalized and edge-normalized intersection algorithms as a function of the accuracy parameter ε.  It performs `n` iterations for each ε value to compute statistical measures.
+
+    Parameters
+    ----------
+    G : nx.Graph
+        The input graph.
+    δ : float
+        Confidence parameter.
+    n : int
+        Number of iterations to compute the statistics.
+
+    Returns
+    -------
+    pd.DataFrame
+        A pandas DataFrame containing the results.
+    """
     i_vertex_timed = stopwatch(intersection.vertex_normalized_intersection)
     î_vertex_timed = stopwatch(epic.vertex_normalized_intersection)
     i_edge_timed = stopwatch(intersection.edge_normalized_intersection)
@@ -184,14 +241,18 @@ def generate_data(G: nx.Graph, δ: float, n: int) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="Generate data for analyzing the performance of normalized intersection algorithms (vertex and edge normalized).",
+        epilog="Example usage: python generate_normalized_intersection_data.py ./graphs/deezer_RO_edges.csv --delimiter , --delta 0.1 --n 10",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
     parser.add_argument(
         "graph_input",
         type=str,
-        help="Path to the graph file",
+        help="Path to the graph file (edgelist format).",
     )
     parser.add_argument(
-        "--delimiter", type=str, default=None, help="Delimiter for the graph file"
+        "--delimiter", type=str, default=None, help="Delimiter used for the edgelist."
     )
     parser.add_argument("--delta", type=float, default=0.1, help="Confidence parameter")
     parser.add_argument("--n", type=int, default=10, help="Number of iterations")

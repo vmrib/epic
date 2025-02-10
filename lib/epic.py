@@ -1,3 +1,8 @@
+"""
+Algorithms to approximate the neighborhood intersection of vertices in a graph.
+Includes default, vertex-normalized and edge-normalized versions.
+"""
+
 from collections import defaultdict
 import networkx as nx
 from math import floor, ceil, log2, log
@@ -5,8 +10,9 @@ from itertools import combinations
 from random import choice
 
 
-c = 0.5
-ć = 0.5
+# Constants used for sample size calculations
+c = 0.5  # Used in ε-approximations
+ć = 0.5  # Used in relative (p, ε)-approximations
 
 
 def vertex_normalized_intersection(
@@ -119,7 +125,7 @@ def intersection_vertex_sampling(
 ) -> dict:
     """
     Estimates the intersection of all pairs of vertices in a graph
-    (by sampling vertices) with absolute error ε and confidence 1 - δ.
+    (by sampling vertices) with relative error ε and confidence 1 - δ.
 
     Parameters
     ----------
@@ -172,7 +178,7 @@ def intersection_edge_sampling(
 ) -> dict:
     """
     Estimates the intersection of all pairs of vertices in a graph
-    (by sampling edges) with absolute error ε and confidence 1 - δ.
+    (by sampling edges) with relative error ε and confidence 1 - δ.
 
     Parameters
     ----------
