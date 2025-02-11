@@ -137,23 +137,19 @@ def generate_data(G: nx.Graph, δ: float, n: int) -> pd.DataFrame:
             for _ in range(n):
                 i_vertex, i_vertex_runtime = i_vertex_timed(G)
                 i_vertex_runtime_values.append(i_vertex_runtime)
-                print(f"Computed i_vertex in {i_vertex_runtime:.2f} seconds.")
 
                 î_vertex, î_vertex_runtime = î_vertex_timed(
                     G, ε, δ, allow_sample_overflow=True
                 )
                 î_vertex_runtime_values.append(î_vertex_runtime)
-                print(f"Computed î_vertex in {î_vertex_runtime:.2f} seconds.")
 
                 i_edge, i_edge_runtime = i_edge_timed(G)
                 i_edge_runtime_values.append(i_edge_runtime)
-                print(f"Computed i_edge in {i_edge_runtime:.2f} seconds.")
 
                 î_edge, î_edge_runtime = î_edge_timed(
                     G, ε, δ, allow_sample_overflow=True
                 )
                 î_edge_runtime_values.append(î_edge_runtime)
-                print(f"Computed î_edge in {î_edge_runtime:.2f} seconds.")
 
                 î_vertex_abs_error_values = [
                     abs(î_vertex[(u, v)] - i_vertex[(u, v)]) for u, v in i_vertex.keys()
@@ -260,9 +256,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     G = read_graph(args.graph_input, args.delimiter)
-    print(
-        f"Loaded graph from {args.graph_input}. Number of nodes: {G.number_of_nodes()}. Number of edges: {G.number_of_edges()}"
-    )
+
     graph_name = Path(args.graph_input).stem
     Path("./results").mkdir(parents=True, exist_ok=True)
     output_path = Path(

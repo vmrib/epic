@@ -105,7 +105,6 @@ def generate_row_data(
 
     i, i_runtime = intersection_timed(G)
     row["Intersection Runtime"] = i_runtime
-    print(f"Computed intersection in {i_runtime:.2f} seconds")
 
     î_vertex_sampling_runtime_values = []
     î_vertex_sampling_rate_values = []
@@ -117,9 +116,6 @@ def generate_row_data(
             G, ε, δ, p_vertex, allow_sample_overflow=True
         )
         î_vertex_sampling_runtime_values.append(î_vertex_sampling_runtime)
-        print(
-            f"Computed intersection (vertex sampling) in {î_vertex_sampling_runtime:.2f} seconds"
-        )
 
         î_vertex_sampling_rate = 0
         for u, v in i:
@@ -132,9 +128,6 @@ def generate_row_data(
             G, ε, δ, p_edge, allow_sample_overflow=True
         )
         î_edge_sampling_runtime_values.append(î_edge_sampling_runtime)
-        print(
-            f"Computed intersection (edge sampling) in {î_edge_sampling_runtime:.2f} seconds"
-        )
 
         î_edge_sampling_rate = 0
         for u, v in i:
@@ -226,7 +219,6 @@ def generate_data(
     with alive_bar(len(table1_gnp_ps) + len(table2_gnp_ns)) as bar:
         for gnp_p in table1_gnp_ps:
             G = nx.gnp_random_graph(table1_gnp_n, gnp_p)
-            print(f"Generated GNP_{table1_gnp_n}_{gnp_p}")
             table1_rows.append(
                 {"p": gnp_p, **generate_row_data(G, ε, δ, n, p_vertex, p_edge)}
             )
@@ -234,7 +226,6 @@ def generate_data(
 
         for gnp_n in table2_gnp_ns:
             G = nx.gnp_random_graph(gnp_n, table2_gnp_p)
-            print(f"Generated GNP_{gnp_n}_{table2_gnp_p}")
             table2_rows.append(
                 {"n": gnp_n, **generate_row_data(G, ε, δ, n, p_vertex, p_edge)}
             )
