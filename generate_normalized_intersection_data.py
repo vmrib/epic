@@ -1,5 +1,5 @@
 """
-Generates data for analyzing the performance of normalized intersection algorithms. The data includes statistical measures (mean, standard deviation, max, min) for the average absolute error and runtime for both vertex-normalized and edge-normalized intersection algorithms as a function of the accuracy parameter ε. It performs `n` iterations for each ε value to compute statistical measures.
+Generate data for analyzing the performance of normalized intersection algorithms. The data includes statistical measures (mean, standard deviation, max, min) for the average absolute error and runtime for both vertex-normalized and edge-normalized intersection algorithms as a function of the accuracy parameter ε. It performs `n` iterations for each ε value to compute statistical measures.
 
 This data is used in Figures 2, 3 and 4 in the paper.
 

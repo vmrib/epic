@@ -1,5 +1,5 @@
 """
-Generates data for comparing vertex and edge sampling strategies on GNP graphs. The data contains statistical measures (mean, standard deviation, max, min) for the runtime and rate of successfull approximations for the vertex and edge strategies. The data is collected for various GNP graphs with different numbers of vertices (GNP n) and edge probabilities (GNP p). Two tables are generated: Table 1 varies the edge generation probability (GNP p) while keeping the number of vertices (GNP n) constant, and Table 2 varies the number of vertices (GNP n) while keeping the edge probability (GNP p) constant.
+Generate data for comparing vertex and edge sampling strategies on GNP graphs. The data contains statistical measures (mean, standard deviation, max, min) for the runtime and rate of successfull approximations for the vertex and edge strategies. The data is collected for various GNP graphs with different numbers of vertices (GNP n) and edge probabilities (GNP p). Two tables are generated: Table 1 varies the edge generation probability (GNP p) while keeping the number of vertices (GNP n) constant, and Table 2 varies the number of vertices (GNP n) while keeping the edge probability (GNP p) constant.
 
 This data is used in Table 1 and 2 in the paper.
 
