@@ -103,7 +103,7 @@ import pandas as pd
 
 
 def generate_data(
-    gnp_ns: list[int], gnp_ps: list[float], epsilon: float, delta: float, n: int
+    gnp_ns: list[int], gnp_ps: list[float], ε: float, δ: float, n: int
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     Generates data for heatmaps visualizing the Minimum Threshold p for vertex and edge sampling strategies on GNP graphs.
