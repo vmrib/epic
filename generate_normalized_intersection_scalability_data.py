@@ -1,7 +1,7 @@
 """
 Generate data for analyzing the scalability of normalized intersection algorithms (vertex and edge normalized). The data includes statistical measures (mean, standard deviation, max, min) of the runtime of the exact and approximate algorithms.
 
-This data is used in Figure 5 in the paper.
+This data is used in Figure 5 of the paper.
 
 Example usage:
 python generate_normalized_intersection_scalability_data.py --epsilon 0.05 --delta 0.1 --n 10 --barabasi_m 10 --barabasi_ns 10000 20000 30000 40000 50000 60000 80000 90000 100000

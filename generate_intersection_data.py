@@ -1,7 +1,7 @@
 """
 Generate data for comparing vertex and edge sampling strategies on GNP graphs. The data contains statistical measures (mean, standard deviation, max, min) for the runtime and rate of successfull approximations for the vertex and edge strategies. The data is collected for various GNP graphs with different numbers of vertices (GNP n) and edge probabilities (GNP p). Two tables are generated: Table 1 varies the edge generation probability (GNP p) while keeping the number of vertices (GNP n) constant, and Table 2 varies the number of vertices (GNP n) while keeping the edge probability (GNP p) constant.
 
-This data is used in Table 1 and 2 in the paper.
+This data is used in Table 1 and 2 of the paper.
 
 Example usage:
 python generate_intersection_data.py --epsilon 0.1 --delta 0.1 --n 10 --p_vertex 0.7 --p_edge 0.04 --table1_gnp_n 1000 --table1_gnp_ps 0.1 0.3 0.5 0.7 0.9 --table2_gnp_ns 500 1000 2000 4000 --table2_gnp_p 0.5

@@ -1,7 +1,7 @@
 """
 Generate data for heatmaps visualizing the Minimum Threshold p for vertex and edge sampling strategies on GNP graphs. The heatmaps display the Minimum Threshold p for varying graph sizes (number of vertices) and edge probabilities. Each cell in the heatmap represents the average Minimum Threshold p averaged over n iterations.
 
-This data is used in Figures 6 and 7 in the paper.
+This data is used in Figures 6 and 7 of the paper.
 
 Example usage:
 python generate_heatmaps_data.py --epsilon 0.1 --delta 0.1 --n 10 --gnp_ns 1000 2000 3000 4000 5000 --gnp_ps 0.05 0.1 0.3 0.5 0.7 0.9
