@@ -53,8 +53,8 @@ You can also run individual scripts with custom options:
 | `generate_dataset_details.py`                       | `results/dataset_details.csv`                            | Table 3                       |
 | `generate_heatmaps_data.py`                         | `results/heat_map_*.csv`                                 | Figures 6 and 7               |
 | `generate_intersection_data.py`                     | `results/intersection_data_*.csv`                        | Tables 1 and 2                |
-| `generate_normalized_intersection_data`             | `results/normalized_intersection_data_*.csv`             | Figures 2, 3 and 4            |
-| `generate_normalized_intersection_scalability_data` | `results/normalized_intersection_scalability_data_*.csv` | Figure 5                      |
+| `generate_normalized_intersection_data.py`             | `results/normalized_intersection_data_*.csv`             | Figures 2, 3 and 4            |
+| `generate_normalized_intersection_scalability_data.py` | `results/normalized_intersection_scalability_data_*.csv` | Figure 5                      |
 
 To see all the custom options for a script, use the `--help` flag. For example:
 ```bash
