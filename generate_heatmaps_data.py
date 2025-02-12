@@ -4,7 +4,7 @@ Generate data for heatmaps visualizing the Minimum Threshold p for vertex and ed
 This data is used in Figures 6 and 7 of the paper.
 
 Example usage:
-python generate_heatmaps_data.py --epsilon 0.1 --delta 0.1 --n 10 --gnp_ns 1000 2000 3000 4000 5000 --gnp_ps 0.05 0.1 0.3 0.5 0.7 0.9
+python3 generate_heatmaps_data.py --epsilon 0.1 --delta 0.1 --n 10 --gnp_ns 1000 2000 3000 4000 5000 --gnp_ps 0.05 0.1 0.3 0.5 0.7 0.9
 
 This will generate two CSV files in the `./results` directory containing the data for the vertex and edge sampling strategies heatmaps.
 """

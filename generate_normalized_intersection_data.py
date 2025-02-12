@@ -4,7 +4,7 @@ Generate data for analyzing the performance of normalized intersection algorithm
 This data is used in Figures 2, 3 and 4 of the paper.
 
 Example usage:
-python generate_normalized_intersection_data.py ./graphs/deezer_RO_edges.csv --delimiter , --delta 0.1 --n 10
+python3 generate_normalized_intersection_data.py ./graphs/deezer_RO_edges.csv --delimiter , --delta 0.1 --n 10
 
 This will generate a CSV file in the `./results` directory containing the results.
 """

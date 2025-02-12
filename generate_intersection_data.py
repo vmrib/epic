@@ -4,7 +4,7 @@ Generate data for comparing vertex and edge sampling strategies on GNP graphs. T
 This data is used in Table 1 and 2 of the paper.
 
 Example usage:
-python generate_intersection_data.py --epsilon 0.1 --delta 0.1 --n 10 --p_vertex 0.7 --p_edge 0.04 --table1_gnp_n 1000 --table1_gnp_ps 0.1 0.3 0.5 0.7 0.9 --table2_gnp_ns 500 1000 2000 4000 --table2_gnp_p 0.5
+python3 generate_intersection_data.py --epsilon 0.1 --delta 0.1 --n 10 --p_vertex 0.7 --p_edge 0.04 --table1_gnp_n 1000 --table1_gnp_ps 0.1 0.3 0.5 0.7 0.9 --table2_gnp_ns 500 1000 2000 4000 --table2_gnp_p 0.5
 
 This will generate two CSV files in the `./results` directory containing the data for the two tables.
 """

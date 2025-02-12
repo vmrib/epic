@@ -23,7 +23,7 @@ python generate_normalized_intersection_scalability_data.py --epsilon 0.05 --del
 echo -e "\nGenerating data for Figures 6 and 7..."
 python3 generate_heatmaps_data.py --epsilon 0.1 --delta 0.1 --n 10 --gnp_ns 1000 2000 3000 4000 5000 --gnp_ps 0.05 0.1 0.3 0.5 0.7 0.9
 
-echo -e "\nData generation complete. All data is stored in the './results' directory.
+echo -e "\nData generation complete. All data is stored inside the './results' directory.
 Table 1   -> ./results/intersection_data_table_1_*.csv
 Table 2   -> ./results/intersection_data_table_2_*.csv
 Table 3   -> ./results/dataset_details.csv

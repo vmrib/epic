@@ -4,7 +4,7 @@ Generate data containg the number of nodes, number of edges, maximum degree, and
 This data is used in Table 3 of the paper.
 
 Example usage:
-python generate_dataset_details.py graphs/as20000102.txt graphs/facebook_new_sites_edges.csv graphs/facebook_new_sites_edges.csv
+python3 generate_dataset_details.py graphs/as20000102.txt graphs/facebook_new_sites_edges.csv graphs/facebook_new_sites_edges.csv
 
 This will generate a CSV file in the `./results` directory containing the data for the graphs as20000102.txt, facebook_new_sites_edges.csv, and facebook_new_sites_edges.csv.
 """

@@ -4,7 +4,7 @@ Generate data for analyzing the scalability of normalized intersection algorithm
 This data is used in Figure 5 of the paper.
 
 Example usage:
-python generate_normalized_intersection_scalability_data.py --epsilon 0.05 --delta 0.1 --n 10 --barabasi_m 10 --barabasi_ns 10000 20000 30000 40000 50000 60000 80000 90000 100000
+python3 generate_normalized_intersection_scalability_data.py --epsilon 0.05 --delta 0.1 --n 10 --barabasi_m 10 --barabasi_ns 10000 20000 30000 40000 50000 60000 80000 90000 100000
 
 This will generate a CSV file in the `./results` directory containing the data for the normalized intersection scalability analysis.
 """
