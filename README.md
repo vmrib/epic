@@ -3,7 +3,7 @@
 
 This repository contains the source code for EPIC and all scripts used to generate the data used in article Efficient Approximations of Neighborhood Intersection in Large Graphs via Sampling (link omitted due to double-blind peer review).
 
-EPIC (**E**fficient **P**robabilistic Neighborhood **I**ntersection **C**alculator) consists of four algorithms that approximate the _neighborhood intersection_ for all pairs of vertices is a graph.
+EPIC (**E**fficient **P**robabilistic Neighborhood **I**ntersection **C**alculator) consists of four algorithms that approximate the _neighborhood intersection_ for all pairs of vertices in a graph.
 | Algorithm | Neighborhood Intersection Type | Error bound type |
 |:-------------------:|:------------------------------:|:----------------:|
 | `intersection_vertex_sampling` | Default | Multiplicative |
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 ## Reproducibility
 
-To generate all data used in the paper, with the same graphs and parameters:
+To generate all data used in the paper, with the same graphs and parameters, run the following script:
 
 ```bash
 source generate_all_paper_data.sh
@@ -45,7 +45,7 @@ You can also run individual scripts with custom options:
 - `generate_dataset_details.py`: Generates data containg the number of nodes, number of edges, maximum degree, and non-empty intersections ratio for multiple graphs.
 - `generate_heatmaps_data.py`: Generates data for heatmaps visualizing the Minimum Threshold p for vertex and edge sampling strategies on GNP graphs.
 - `generate_intersection_data.py`: Generates data for comparing vertex and edge sampling strategies on GNP graphs.  The data includes statistical measures (mean, standard deviation, minimum, and maximum) for runtime and the success rate of approximations for both strategies.
-- `generate_normalized_intersection_data`: Generates data for analyzing the performance of normalized intersection algorithms. The data includes statistical measures (mean, standard deviation, max, min) for the average absolute error and runtime for both vertex-normalized and edge-normalized intersection algorithms as a function of the accuracy parameter $\epsilon$.
+- `generate_normalized_intersection_data.py`: Generates data for analyzing the performance of normalized intersection algorithms. The data includes statistical measures (mean, standard deviation, max, min) for the average absolute error and runtime for both vertex-normalized and edge-normalized intersection algorithms as a function of the accuracy parameter $\epsilon$.
 - `generate_normalized_intersection_scalability_data`: Generates data for analyzing the scalability of normalized intersection algorithms (vertex- and edge-normalized). The data includes statistical measures (mean, standard deviation, max, min) of the runtime of the exact and approximate algorithms.
 
 | Script                                              | Output                                                   | Where it is used in the paper |
